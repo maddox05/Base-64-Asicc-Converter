@@ -13,11 +13,15 @@ def encode():
 
 def decode():
     userinput = input("Decode Here: ")
-    decodedmessage = base64.b64decode(userinput)
-    newmessage = str(decodedmessage)
-    newermsg = newmessage.replace('b', '')
-    newestmsg = newermsg[1:len(newermsg) - 1]
-    print(newestmsg)
+    try:
+        decodedmessage = base64.b64decode(userinput)
+        newmessage = str(decodedmessage)
+        newermsg = newmessage.replace('b', '')
+        newestmsg = newermsg[1:len(newermsg) - 1]
+        print(newestmsg)
+    except:
+        print("This is not in ascii")
+    
     start()
 
 
